@@ -11,10 +11,7 @@ class Column extends React.Component {
   state = {
     cards: this.props.cards || [],
   }
-  static propTypes = {
-    cards: PropTypes.array,
-    
-  }
+  
   addCard(title){
     this.setState(state => (
       {
@@ -37,7 +34,7 @@ class Column extends React.Component {
             </span>
           </h3>
           <div>
-            {this.state.cards.maps(({key, ...cardProps}) => (
+            {this.state.cards.map(({key, ...cardProps}) => (
               <Card key={key} {...cardProps} />
             ))}
           </div>
@@ -49,4 +46,5 @@ class Column extends React.Component {
     )
   }
 }
+
 export default Column;
