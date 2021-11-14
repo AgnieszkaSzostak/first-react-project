@@ -3,8 +3,7 @@ import styles from './Column.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card.js';
 import Icon from '../Icon/Icon.js';
-// import Creator from '../Creator/Creator.js';
-// eslint-disable-next-line no-unused-vars
+import Creator from '../Creator/Creator.js';
 import {settings} from '../../data/dataStore.js';
 
 
@@ -14,11 +13,14 @@ class Column extends React.Component {
     cards: PropTypes.array,
     icon: PropTypes.node,
     title: PropTypes.node.isRequired,
+    addCard: PropTypes.func,
   };
- 
+  static defaultProps = {
+    icon: settings.defaultColumnIcon,
+  };
   render() {
 
-    const {title, icon, cards} = this.props;
+    const {title, cards, icon, addCard} = this.props;
     return (
       <section className={styles.component}>
         <h3 className={styles.title} >{title}
@@ -31,9 +33,9 @@ class Column extends React.Component {
             <Card key={cardData.id} {...cardData} />
           ))}
         </div>
-        {/* <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
-        </div> */}
+        <div className={styles.creator}>
+          <Creator text={settings.cardCreatorText} action={addCard}/>
+        </div>
         
       </section>
     );
