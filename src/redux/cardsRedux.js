@@ -3,7 +3,7 @@ import shortid from 'shortid';
 // selectors
 export const getCardsForColumn = ({cards}, columnId, searchString) => cards.filter(card => card.columnId == columnId
   && 
-  card.title  == new RegExp(searchString, 'i').test(card.title),
+  new RegExp(searchString, 'i').test(card.title), // card.titile == ?
 );
 
 // action name creator
