@@ -15,11 +15,10 @@ class App extends React.Component {
     addList: PropTypes.func,
   };
  
-  addList = () => {
 
-  };
+
   render() {
-    const {title, subtitle, lists, addList} = this.props;
+    const {title, subtitle, lists} = this.props;
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -28,7 +27,7 @@ class App extends React.Component {
         {lists.map(listData => (
           <List key={listData.id} {...listData} />
         ))}
-        <Creator text={settings.listCreatorText} action={addList}/>
+        <Creator text={settings.listCreatorText} />
       </main>
     );
   }
