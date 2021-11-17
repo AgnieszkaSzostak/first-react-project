@@ -3,6 +3,8 @@ import styles from './App.scss';
 import List from '../List/ListContainer.js';
 import PropTypes from 'prop-types';
 import Search from '../Search/SearchContainer.js';
+import Creator from '../Creator/Creator.js';
+import { settings } from '../../data/dataStore';
 
 class App extends React.Component {
   
@@ -10,9 +12,14 @@ class App extends React.Component {
     title: PropTypes.node,
     subtitle: PropTypes.node,
     lists: PropTypes.array,
+    addList: PropTypes.func,
+  };
+ 
+  addList = () => {
+
   };
   render() {
-    const {title, subtitle, lists} = this.props;
+    const {title, subtitle, lists, addList} = this.props;
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
@@ -21,6 +28,7 @@ class App extends React.Component {
         {lists.map(listData => (
           <List key={listData.id} {...listData} />
         ))}
+        <Creator text={settings.listCreatorText} action={addList}/>
       </main>
     );
   }
