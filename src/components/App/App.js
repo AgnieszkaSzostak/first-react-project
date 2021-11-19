@@ -3,8 +3,6 @@ import styles from './App.scss';
 import List from '../List/ListContainer.js';
 import PropTypes from 'prop-types';
 import Search from '../Search/SearchContainer.js';
-import Creator from '../Creator/Creator.js';
-import { settings } from '../../data/dataStore';
 
 class App extends React.Component {
   
@@ -27,7 +25,6 @@ class App extends React.Component {
         {lists.map(listData => (
           <List key={listData.id} {...listData} />
         ))}
-        <Creator text={settings.listCreatorText} />
       </main>
     );
   }
