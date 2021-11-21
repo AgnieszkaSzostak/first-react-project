@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import App from './App';
+import Home from './Home.js';
 
 const mapStateToProps = state => ({
   title: state.app.title,
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Home);
 
 
 

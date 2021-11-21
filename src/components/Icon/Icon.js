@@ -7,3 +7,4 @@ Icon.propTypes = {
   name: PropTypes.node,
 };
 export default Icon;
+
