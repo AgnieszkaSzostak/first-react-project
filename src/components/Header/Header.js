@@ -4,7 +4,7 @@ import styles from './Header.scss';
 import Container from '../Container/Container.js';
 import Icon from '../Icon/Icon.js';
 import { settings } from '../../data/dataStore';
-import {Search} from '../Search/Search.js';
+import Search from '../Search/Search.js';
 
 class Header extends React.Component {
 
