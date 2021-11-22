@@ -8,14 +8,14 @@ import Container from '../Container/Container.js';
 import {withRouter} from 'react-router-dom';
 
 
-class Search extends React.Component {
+export class Search extends React.Component {
   static propTypes = {
     text: PropTypes.string,
     searchString: PropTypes.string,
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
-    history: PropTypes.array,
+    history: PropTypes.object,
   };
 
   static defaultProps = {
@@ -23,7 +23,8 @@ class Search extends React.Component {
   };
 
   state = {
-    value: this.props.searchString,
+    value: '',
+    //this.props.searchString
   };
 
   handleChange(event){
