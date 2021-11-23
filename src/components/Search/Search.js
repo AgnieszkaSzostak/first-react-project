@@ -24,7 +24,6 @@ export class Search extends React.Component {
 
   state = {
     value: '',
-    //this.props.searchString
   };
 
   handleChange(event){
@@ -35,8 +34,9 @@ export class Search extends React.Component {
   }
 
   handleOK(){
-    // this.props.changeSearchString(this.state.value);
+    
     this.props.history.push(`/search/${this.state.value}`);
+  
   }
 
   componentDidUpdate(prevProps){

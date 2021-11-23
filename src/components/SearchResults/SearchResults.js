@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './SearchResults.scss';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card.js';
-// import {settings} from '../../data/dataStore.js';
 
 class SearchResults extends React.Component {
 
@@ -17,11 +16,13 @@ class SearchResults extends React.Component {
     
     return (
       <section className={styles.component}>
+
         <div>
           {cards.map(cardData => (
             <Card key={cardData.id} {...cardData} />
           ))}
         </div>
+        
       </section>
     );
   }
